@@ -1,0 +1,123 @@
+---
+layout: post
+title: How it looks like now
+date: 2014-02-09 15:32:30.000000000 +01:00
+type: post
+published: true
+status: publish
+categories:
+- Announcement
+- Tunnelers
+- Website
+tags: []
+meta:
+  _edit_last: '12'
+  snap_MYURL: ''
+  snapEdIT: '1'
+  _post_restored_from: a:3:{s:20:"restored_revision_id";i:166;s:16:"restored_by_user";i:12;s:13:"restored_time";i:1391785298;}
+  snapTW: s:317:"a:1:{i:0;a:9:{s:4:"doTW";s:1:"1";s:10:"SNAPformat";s:61:"Well, I
+    finally got to write it. How it looks like now. %URL%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:11:"isPrePosted";s:1:"1";s:8:"isPosted";s:1:"1";s:4:"pgID";s:18:"432529969945014272";s:5:"pDate";s:19:"2014-02-09
+    15:02:35";}}";
+  snap_isAutoPosted: '1'
+  snapFB: s:479:"a:1:{i:0;a:12:{s:4:"doFB";s:1:"1";s:8:"postType";s:1:"I";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:45:"Well,
+    finally I got to write it. Enjoy. %URL%";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:91:"http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.51.562.png";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:11:"isPrePosted";s:1:"1";s:8:"isPosted";s:1:"1";s:4:"pgID";s:31:"278021432315000_509234115860396";s:5:"pDate";s:19:"2014-02-09
+    15:00:49";}}";
+  _wpas_skip_7142631: '1'
+  _wpas_skip_7143354: '1'
+  _wpas_skip_7143291: '1'
+author:
+  login: Doctor-Jellyface
+  email: doctorjellyface@gmail.com
+  display_name: Doctor Jellyface
+  first_name: Doctor
+  last_name: Jellyface
+---
+<p>Well, FINALLY I got to write this. At last. Whew. Sorry for the delay, tons of things seem to happen now.</p>
+<p>WELL. First point. I am working on Tunnelers multi-player, but it;s been DAMN harder that I thought. All those little complications that just show up and then hit you in the face. Sometimes I spend a week in debugging.</p>
+<p>To make it clearer what I'm doing, I'm gonna write it all here.</p>
+<p>So, second point. I wanted to the ship the first multi-player release with CTF. Why?</p>
+<ol>
+<li>It's the best mode.</li>
+<li>It's awesome.</li>
+<li>It would be boring to just run around a simple map with a tank with nothing to do.</li>
+</ol>
+<p>But, this also created some major complications, listing</p>
+<ul>
+<li>The game needed a game manager, that would sync the scores of the team and the players between the server and the client.</li>
+<li>The game also needed actual flags that work with the network system fluently.</li>
+</ul>
+<p>And, that's all. It doesn't look like much, but imagine you have to write down EVERY DAMN game event as a method in the server script, together with how it changes the scores, etc., and the write down all of the game events as methods AGAIN in the client script, AND THEN make the execute of the client method from the server method with an RPC call, and make sure every parameter can be RPC-ed, and if not, convert it to something that can be, and then convert it back in the client script.</p>
+<p>Ugh. (breathes heavily, calms down a bit). Well, that's over, and let's go to something more positive.</p>
+<p>Third point. The WORLD. Ya, the world. Actually it's quite a small world with some cubes and stuff. Here it is:</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.51.562.png"><img class="alignnone size-full wp-image-156" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-04.51.562.png" alt="ss (2014-02-04 at 04.51.56)" width="664" height="314" /></a></p>
+<p>Say, "Hello, World". Well, it's not called "World", but "test_scene". Okay, it's not called that, but it will. right now it's called "c_sharp_network_test". I didn't have time to rename it. But I will.</p>
+<p><!--more--></p>
+<p>Now, meet the most important member of this scene. Mr Pillar.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.52.23.png"><img class="alignnone size-full wp-image-157" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-04.52.23.png" alt="ss (2014-02-04 at 04.52.23)" width="257" height="274" /></a></p>
+<p>And here we go again. No, he is not called "Mr. Pillar", just "Pillar". It's shorter. This is a static lightmapped scaled cube which I use to test collisions and I test shooting against it a lot. Last time I was firing lasers at it.</p>
+<p>Now, the bases.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.53.11.png"><img class="alignnone size-full wp-image-159" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-04.53.11.png" alt="ss (2014-02-04 at 04.53.11)" width="249" height="275" /></a></p>
+<p>I know they don't look like bases, but they are. Again, they are simple cubes, scaled and lightmapped, but the stuff, between it, that's the magic. It's a trigger which get's recognized by every tank that enters it, and the tank starts to heal itself when it does. When it's his own base, he heals quicker.</p>
+<p>Righto, the FLAGS.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.53.29.png"><img class="alignnone size-full wp-image-160" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-04.53.29.png" alt="ss (2014-02-04 at 04.53.29)" width="378" height="130" /></a></p>
+<p>The mysterious figures of the scene. I'm just testing them yet, but they already work like flags, though only in offline mode. But let yourself get surprised.</p>
+<p>And, (drum roll), the Tank.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-04.54.38.jpg"><img class="alignnone size-full wp-image-161" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-04.54.38.jpg" alt="ss (2014-02-04 at 04.54.38)" width="271" height="211" /></a></p>
+<p>You probably know this guy from the Alphas. He is, allas, unusable in the real world, because his turret is so small, it is very hard to hit him, as all of the lasers are fired in that height. So, I made another design.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-05.06.59.png"><img class="alignnone size-full wp-image-162" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-05.06.59.png" alt="ss (2014-02-04 at 05.06.59)" width="289" height="190" /></a></p>
+<p>This guy is almost invisible 'cos of his colour, so I painted him up a bit.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-05.09.03.png"><img class="alignnone size-full wp-image-163" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-05.09.03.png" alt="ss (2014-02-04 at 05.09.03)" width="310" height="201" /></a></p>
+<p>Haharrr, meet the Leviathan. That was what the other tank in the original Tunnelers was called, right? I know, he looks more like the Box Tank, but, you know, no time for graphics.</p>
+<p>And now, how it looks like in-game.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-04-at-05.11.55.png"><img class="alignnone size-full wp-image-164" src="{{ site.baseurl }}/assets/ss-2014-02-04-at-05.11.55.png" alt="ss (2014-02-04 at 05.11.55)" width="1382" height="744" /></a></p>
+<p>Feel free to study this picture.</p>
+<p>Now, to the announcement thingies.</p>
+<p>I have NO IDEA when I will release the first test of Tunnelers Unitified (Yay, new name! Isn't it awesome? It is awesome.).</p>
+<p>Hmm. I didn't think it would take so long. But, as the complications came in the development, they came in real life.<br />
+I am a student, and this year, I will do the Testing 9 (Slovaks probably know what I am talking of. For those who don't, they are tests from Maths and Slovak). They are very important for my acceptance (or whatever you call it) for high school, and, as my parents say, I am deciding about my future now. So, apart from my homework, I have to do practice tests too and my parents hate when I'm on the computer.</p>
+<p>Ah. Life's hard. And cruel. But it can be nice too.</p>
+<p>What haven't I talked about?</p>
+<p>Yeah, what Tunnelers still needs for the release. Here's the list.</p>
+<ul>
+<li>Finish the main menu so that's it's usable.</li>
+<li>Fix the lasers so that they work through network.</li>
+<li>Create at least some kind of map.</li>
+<li>The game HUD. You need to see the scores and stuff like that, don't you?</li>
+<li>Yeah, and the life points (or Energy and Shield points) aren't ready either.</li>
+</ul>
+<p>Just had to delete these few lines I just wrote. I was just too angry to write then. I had to calm down. WordPress just deleted like 400 words I had just written, all because it's auto-save function doesn't work well. Ah. Looks like I can't do anything else than re-write it.</p>
+<p>Well. That's Tunnelers. Let's stop (partially) talking about it, OK?</p>
+<p>A few words about this site. (Point four. I forgot about them.)</p>
+<p>A new look! Wow!<br />
+A new update came with this new default theme. It's at least a bit better than the last one.</p>
+<p>And, the twitter sidebar. Yes, I am on twitter (for those who hate twitter, I am not going to change that). <a title="Pssst! Follow me." href="https://twitter.com/DoctorJellyface" target="_blank">@DoctorJellyface</a> if you want to know. Also, the sidebar looks much better than before.</p>
+<p>You might have noticed the Developer's Corner. There's only one script there, and it's old already. I just don't have any time to code them, AND upload them every time I change something. Maybe I'll find another way to get them there, but for now, it will stay like this.</p>
+<p>I don't have any time to work with this site. Apart from that, I'm not a web developer. BUT, YOU CAN CHANGE IT!<br />
+Yes, you. Behind that computer/laptop/tablet/phone/TV. Do you want to be a webmaster? You have a chance.<br />
+All you need to know is how to handle with WordPress, and some English, 'cos the whole site is in English and I communicate in English too.<br />
+So, if you want to be a webmaster, just <a title="Contact" href="http://www.howtovacuumgames.6f.sk/contact/" target="_blank">contact me</a>, spam me, whatever.</p>
+<p>You are always welcome.</p>
+<p>And, if you want to help with Tunnelers some other way, you are welcome too.</p>
+<p>Okay. That's that.</p>
+<p>For the Floating Minds, if you are reading this. I am recoding Tunnelers because I loved to play it. I never said, nor I a saying and I never will say that I own Tunnelers. You do. If you want, you can</p>
+<ul>
+<li>terminate the whole development (which I would be unhappy).</li>
+<li>support the development (which I would be glad).</li>
+<li>take over the development.</li>
+</ul>
+<p>If you choose whatever, just <a title="Contact" href="http://www.howtovacuumgames.6f.sk/contact/" target="_blank">contact</a> me.</p>
+<p>Uf. Or "Oof" more Englishly.</p>
+<p>This is the largest blog post I have ever written.</p>
+<p>Now check out some cool links that you <strong>should</strong> check out.</p>
+<p>The Tunnelers Fans Steam Group<br />
+<a href="http://steamcommunity.com/groups/tunnelersfans" target="_blank">http://steamcommunity.com/groups/tunnelersfans</a></p>
+<p>The Greenlight page of the original Tunnelers<br />
+<a href="http://steamcommunity.com/sharedfiles/filedetails/?id=116610283" target="_blank">http://steamcommunity.com/sharedfiles/filedetails/?id=116610283</a></p>
+<p>The Fans of Tunnelers Facebook Page! (Warning - Slovak language used, and I rarely go to Facebook)<br />
+<a href="https://www.facebook.com/fansoftunnelers" target="_blank">https://www.facebook.com/fansoftunnelers</a></p>
+<p>And of course, listen to and download the awesome Tunnelers soundtrack.<br />
+<a href="https://www.youtube.com/playlist?list=PL6EA376D35BA607AA" target="_blank">https://www.youtube.com/playlist?list=PL6EA376D35BA607AA</a><br />
+<a href="http://www.mediafire.com/download/bw8tn4e4m54ya8a/Tunnelers+Soundtrack.rar" target="_blank">http://www.mediafire.com/download/bw8tn4e4m54ya8a/Tunnelers+Soundtrack.rar</a></p>
+<p>And that's all for now. I hope I wrote everything. If not, just ask. anywhere.</p>
+<p>Heroic pose.</p>
+<p><a href="http://www.howtovacuumgames.6f.sk/wp-content/uploads/2014/02/ss-2014-02-06-at-06.53.29.png"><img class="alignnone size-full wp-image-173" src="{{ site.baseurl }}/assets/ss-2014-02-06-at-06.53.29.png" alt="ss (2014-02-06 at 06.53.29)" width="513" height="304" /></a></p>
